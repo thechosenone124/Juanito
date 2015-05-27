@@ -136,8 +136,8 @@ class Ship extends GameObject{
    void fire()
    {
      //loc.x+cos(theta-radians(90))*50, loc.y+sin(theta-radians(90))*50 a position 50 units away from the front of the ship
-     //bullet location: ship.loc, adjust bullet stream upwards in relation to ship, adjust bullet stream backwards in relation to ship
-     bullets.add(new Bullet(new PVector(ship.loc.x-(sin(theta-radians(90))*7)-cos(theta-radians(90))*5, ship.loc.y+cos(theta-radians(90))*-(sin(theta-radians(90))*5)), new PVector(cos(theta-radians(90))*(bulletVel-2), sin(theta-radians(90))*(bulletVel-2)), bulletVel));
+     //bullet location: ship.loc, adjust bullet stream upwards in relation to ship, adjust bullet stream backwards in relation to ship 
+     bullets.add(new Bullet(new PVector(ship.loc.x-(sin(theta-radians(90))*7)-cos(theta-radians(90))*5, ship.loc.y+cos(theta-radians(90))*-(sin(theta-radians(90))*5)), new PVector(cos(theta-radians(90))*(bulletVel), sin(theta-radians(90))*(bulletVel)), bulletVel));
      img=firingShip;
    }
    

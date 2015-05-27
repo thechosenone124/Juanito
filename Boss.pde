@@ -2,7 +2,7 @@ class Boss extends GameObject{
   int i = -1;
   Boss(PImage s, PVector loc){
     super(s, loc, 10);
-    health = 300;
+    health = 1000;
     left=loc.x-(img.width/2);
     top=loc.y-(img.height/2);
     right=loc.x+(img.width/2);
@@ -23,7 +23,13 @@ class Boss extends GameObject{
          this.health--;
          int chance=int(random(4));
          if(chance==3)
-         evilbullets.add(new EvilBullet(new PVector(boss.loc.x,boss.loc.y),new PVector(3*x/4,3*y/4)));
+         evilbullets.add(new EvilBullet(new PVector(boss.loc.x-45,boss.loc.y-40),new PVector(3*(ship.loc.x-(boss.loc.x-45))/4,3*(ship.loc.y-(boss.loc.y-40))/4)));
+         evilbullets.add(new EvilBullet(new PVector(boss.loc.x+37,boss.loc.y-48),new PVector(3*(ship.loc.x-(boss.loc.x+37))/4,3*(ship.loc.y-(boss.loc.y-48))/4)));
+         if(juanitoTime)
+         {
+         evilbullets.add(new EvilBullet(new PVector(boss.loc.x+7,boss.loc.y+20),new PVector(3*(ship.loc.x-(boss.loc.x+7))/4,3*(ship.loc.y-(boss.loc.y+20))/4)));
+         evilbullets.add(new EvilBullet(new PVector(boss.loc.x-7,boss.loc.y+20),new PVector(3*(ship.loc.x-(boss.loc.x-7))/4,3*(ship.loc.y-(boss.loc.y+20))/4)));
+         }
        } 
    if(this.health<=0)
    {

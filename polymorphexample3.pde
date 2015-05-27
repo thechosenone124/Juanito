@@ -206,8 +206,11 @@ void runGame()
   }
   //text
   text(score+"", width/2, 50);
-  textAlign(CENTER,TOP);
+  textAlign(CENTER,BOTTOM);
   text(boss.health, width/2, height/4+32);  
+  fill(200-boss.health/5, boss.health/5*2-20,0);
+  rect(boss.loc.x-boss.health/8, boss.loc.y-boss.img.width+50, boss.health/4, 10);
+  
   
   //BossProtectors
    one.run();
@@ -249,7 +252,7 @@ void runGame()
          bullets.remove(i);
       }
     }
-  
+  boss.run();
   //running the boss bullets
   if(evilbullets.size()>0)
   {
@@ -261,7 +264,7 @@ void runGame()
     }
   }
   
-    boss.run();
+    
     
     //juan spawner
     if(x>60)
