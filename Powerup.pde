@@ -14,6 +14,13 @@ class PowerUp extends GameObject{
        int chance = (int)random(2);
        if (chance==1)
        ship.bulletVel++;
+       chance = (int)random(100);
+       if (chance==1)
+       for(int i = 0; i < go.size(); i++)
+       {
+          go.remove(i);
+          score++;
+       }
      }     
      vel.limit(3);
      update();

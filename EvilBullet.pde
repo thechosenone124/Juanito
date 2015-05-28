@@ -17,7 +17,7 @@ class EvilBullet extends GameObject{
    }
   
   void display(){
-    stroke(0,0,255);
+    stroke(255,0,0);
     fill(color(255, 0, 0));
     if(loc != null){
       ellipse(loc.x, loc.y, 10, 10);

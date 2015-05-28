@@ -102,7 +102,7 @@ class Ship extends GameObject{
       for (int i = 0; i < evilbullets.size(); i++)
        if(checkCollision(this, evilbullets.get(i)))
        {
-         int chance=int(random(4));
+         int chance=int(random(8));
          if(chance==3)
          this.health--;
        } 
