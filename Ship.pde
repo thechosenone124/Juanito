@@ -9,7 +9,7 @@ class Ship extends GameObject{
   int bulletVel = 7;
   Ship(PImage s, PVector loc){
     super(s, loc, 5);
-    health=20;
+    health=40;
     acc = new PVector(0,0);
   }
   void update()
@@ -28,9 +28,9 @@ class Ship extends GameObject{
     {
       if (checkCollision(this,j))
       {
-        health--;
+        health -= 2;
         if(bottom<j.loc.y)
-        vel.y=-10;
+        vel.y = -10;
         if(top>j.loc.y)
         vel.y=10;
         if(right<j.loc.x)
@@ -102,7 +102,7 @@ class Ship extends GameObject{
       for (int i = 0; i < evilbullets.size(); i++)
        if(checkCollision(this, evilbullets.get(i)))
        {
-         int chance=int(random(8));
+         int chance=int(random(4));
          if(chance==3)
          this.health--;
        } 

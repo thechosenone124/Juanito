@@ -37,6 +37,7 @@ int seconds = 1;
 int bossWackiness=5;
 Background back1;
 Background back2;
+int timeBetweenJuan=60;
 void setup()
 {
   size(1100, 800);
@@ -211,6 +212,9 @@ void runGame()
   fill(200-boss.health/5, boss.health/5*2-20,0);
   rect(boss.loc.x-boss.health/8, boss.loc.y-boss.img.width+50, boss.health/4, 10);
   
+  fill(200-ship.health*5, ship.health*5*2-20,0);
+  rect(ship.loc.x-ship.health, ship.loc.y-ship.img.width-10, ship.health, 8);
+  
   
   //BossProtectors
    one.run();
@@ -228,6 +232,12 @@ void runGame()
       {
       go.remove(i);
       score++;
+      if (timeBetweenJuan > 15)
+      {
+      int chance = (int)random(5);
+      if (chance == 3)
+      timeBetweenJuan--;
+      }
       if(juanitoTime)
       score++;
       }
@@ -267,7 +277,7 @@ void runGame()
     
     
     //juan spawner
-    if(x>60)
+    if(x>timeBetweenJuan)
     {
     createGameObject("juan", 1);
     x=0;

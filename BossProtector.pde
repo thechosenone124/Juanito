@@ -46,7 +46,7 @@ class BossProtector extends GameObject{
       {
         for (int i = 0; i < bullets.size(); i++)
         {
-        int chance=(int)(random(15));
+        int chance=(int)(random(12));
       if(chance==3)
       {
          if(checkCollision(this, bullets.get(i))&&boss.health<300)
